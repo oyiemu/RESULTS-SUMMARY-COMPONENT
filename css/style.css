@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* SUMMARY BACKGROUND COLORS  */
+  --red: hsla(0, 100%, 67%, 0.1);
+  --yellow: hsla(39, 100%, 56%, 0.1);
+  --green: hsla(166, 100%, 37%, 0.1);
+  --cobalt-blue: hsla(234, 85%, 45%, 0.1);
+
+  /* SUMMARY COLORS */
+  --red-sharp: hsla(0, 100%, 67%, 0.9);
+  --yellow-sharp: hsla(39, 100%, 56%, 0.9);
+  --green-sharp: hsla(166, 100%, 37%, 0.9);
+  --cobalt-blue-sharp: hsla(234, 85%, 45%, 0.9);
+
+  /*	GRADIENTS */
+  --card-bg-start: hsl(252, 100%, 67%);
+  --card-bg-stop: hsl(241, 81%, 54%);
+
+  --circle-bg-start: hsla(256, 72%, 46%, 1);
+  --circle-bg-stop: hsla(241, 72%, 46%, 0);
+
+  /* NEUTRAL */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsla(224, 30%, 27%, 0.7);
+}
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+span{
+  color: var(--lavender);
+}
+b{
+  color: var(--dark-gray-blue);
+}
+p {
+  font-size: 18px;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 10px;
+}
+.card-container {
+  border: 1px solid var(--white);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.first-card {
+  background: linear-gradient(
+    to bottom,
+    var(--card-bg-start),
+    var(--card-bg-stop)
+  );
+  text-align: center;
+  color: var(--white);
+  border-radius: 20px;
+  flex: 1;
+  padding: 15px;
+}
+.header-text h4 {
+  font-weight: 700;
+  margin: 20px 0;
+  color: var(--lavender);
+}
+.score {
+  background: linear-gradient(
+    to bottom,
+    var(--circle-bg-start),
+    var(--circle-bg-stop)
+  );
+  padding: 50px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.score h1 {
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.score p {
+  color: var(--white);
+}
+.footer-text {
+  margin-bottom: 2rem;
+}
+.footer-text h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.footer-text p {
+  color: var(--lavender);
+  line-height: 1.5;
+}
+.second-card {
+  flex: 1;
+}
+.second-card h2 {
+  font-weight: 800;
+  /* align-self: flex-start; */
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 2rem;
+}
+.cards .card {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.cards .card:hover{
+  transform: scale(1.1);
+}
+.cards .card .card-left {
+  display: flex;
+}
+.cards .card img {
+  margin-right: 10px;
+}
+.card .card .card-left p,
+.card .card .card-right p {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.cards .card:nth-child(2) {
+  background-color: var(--red);
+  color: var(--red-sharp);
+}
+.cards .card:nth-child(3) {
+  background-color: var(--yellow);
+  color: var(--yellow-sharp);
+}
+.cards .card:nth-child(4) {
+  background-color: var(--green);
+  color: var(--green-sharp);
+}
+.cards .card:nth-child(5) {
+  background-color: var(--cobalt-blue);
+  color: var(--cobalt-blue-sharp);
+}
+
+.btn {
+  padding: 15px 70px;
+  border-radius: 30px;
+  outline: none;
+  font-size: 18px;
+  margin-top: 20px;
+  background: linear-gradient(
+    to right,
+    var(--card-bg-start),
+    var(--card-bg-stop)
+  );
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: 1s;
+}
+.btn:hover {
+  background: linear-gradient(
+    to right,
+    var(--card-bg-stop),
+    var(--card-bg-start)
+  );
+  scale: 0.98;
+}
+
+@media (max-width: 580px) {
+  body {
+    height: 100%;
+    width: 100%;
+/*    overflow-x: hidden;*/
+  }
+  .container {
+    flex-direction: column;
+    width: 350px;
+  }
+}
